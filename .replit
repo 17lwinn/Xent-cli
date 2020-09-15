@@ -1,2 +1,0 @@
-RUN="python3 main.py"
-LANGUAGE="python3"
