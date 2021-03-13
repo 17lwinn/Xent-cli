@@ -32,10 +32,6 @@ def lex(v1):
     args = argv[2:]
       
     # argument basic syntax
-        
-        
-        
-        
       
     #logic IF
       
@@ -63,8 +59,10 @@ def lex(v1):
         elif stri == "print" and state == 0:        # in case somebody forgets capitals
             state = 1
             stri = ""
+            
+        # unstable feature!!
             """
-        elif stri == "import" and state == 0:        # in case somebody forgets capitals
+        elif stri == "import" and state == 0:
            state = 1
            stri = stri.replace("import", "")
            
