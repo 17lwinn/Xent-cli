@@ -5,6 +5,7 @@ import os
 import sys
 import config as config
 import subprocess
+import importlib
 
 def lex(v1):
     #^ plugins to run each time
@@ -57,9 +58,23 @@ def lex(v1):
         elif stri == "PRINT" and state == 0:
             state = 1
             stri = ""
+        
+
         elif stri == "print" and state == 0:        # in case somebody forgets capitals
             state = 1
             stri = ""
+            """
+        elif stri == "import" and state == 0:        # in case somebody forgets capitals
+           state = 1
+           stri = stri.replace("import", "")
+           
+           
+           print(stri)
+           
+           script = importlib.import_module(stri)
+           script.__name__
+           """
+           
         elif (char == "\"" or char == "\'") and state == 1 and in_str == 0:
             in_str = 1
             stri = ""
@@ -76,7 +91,7 @@ def lex(v1):
             state = 0
             stri = ""
         
-        
+          
         
         #macros
         elif state == 0 and char == "%":
@@ -121,7 +136,7 @@ def lex(v1):
           
         elif state == 0 and stri == "@hold3":
           sleep(3)
-
+          
         #======================
         #previous character
         prev_char = char

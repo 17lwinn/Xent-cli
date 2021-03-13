@@ -1,2 +1,2 @@
-RUN="python3 main.py"
+RUN="python3 xent.py test.xt"
 LANGUAGE="python3"
